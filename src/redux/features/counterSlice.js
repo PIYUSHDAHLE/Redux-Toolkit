@@ -6,6 +6,9 @@ const counterSlice = createSlice({
     value: 0
   },
   reducers: {
+    incAmount: (state, action) =>{
+      state.value += action.payload
+    },
     inc: (state) => {
       state.value += 1;
     },
@@ -13,10 +16,10 @@ const counterSlice = createSlice({
         if (state.value>0) {
             state.value -= 1;
         } 
-    }
+    },
   }
 });
 
-export const { inc, dec } = counterSlice.actions;
+export const { incAmount, inc, dec, } = counterSlice.actions;
 
 export default counterSlice.reducer;
